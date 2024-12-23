@@ -1,6 +1,14 @@
 import React from "react";
 
-const testimonials = [
+// Define a type for the testimonials
+interface Testimonial {
+  name: string;
+  feedback: string;
+  image: string;
+}
+
+// Testimonials data with proper typing
+const testimonials: Testimonial[] = [
   {
     name: "Dean D.",
     feedback: "Great quality products.",
@@ -18,11 +26,13 @@ const testimonials = [
   },
 ];
 
-const TestimonialsSection = () => {
+const TestimonialsSection: React.FC = () => {
   return (
     <div className="bg-purple-50 py-12">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8">What Our Customers Say</h2>
+        <h2 className="text-3xl font-bold text-gray-800 mb-8">
+          What Our Customers Say
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <div
@@ -34,8 +44,12 @@ const TestimonialsSection = () => {
                 alt={`${testimonial.name}'s profile`}
                 className="w-16 h-16 rounded-full mb-4"
               />
-              <p className="italic text-gray-600 mb-4">"{testimonial.feedback}"</p>
-              <h3 className="font-semibold text-gray-700">{testimonial.name}</h3>
+              <p className="italic text-gray-600 mb-4">
+                "{testimonial.feedback}"
+              </p>
+              <h3 className="font-semibold text-gray-700">
+                {testimonial.name}
+              </h3>
             </div>
           ))}
         </div>

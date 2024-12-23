@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
-const CustomiseJersey = () => {
-  const [selectedColor, setSelectedColor] = useState(null);
-  const [selectedSize, setSelectedSize] = useState(null);
-  const [selectedMaterial, setSelectedMaterial] = useState(null);
-  const [deliveryDate, setDeliveryDate] = useState("");
+const CustomiseJersey: React.FC = () => {
+  const [selectedColor, setSelectedColor] = useState<string | null>(null);
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
+  const [selectedMaterial, setSelectedMaterial] = useState<number | null>(null);
+  const [deliveryDate, setDeliveryDate] = useState<string>("");
 
   return (
     <div className="font-sans">
       {/* Header Section */}
-      <header className="bg-gray-100 text-center py-10">
+      <header className="bg-gray-100 text-center py-8 md:py-12">
         <h1 className="text-2xl md:text-4xl font-bold mb-4">
           Let's configure your own printed jersey
         </h1>
@@ -22,7 +22,7 @@ const CustomiseJersey = () => {
       </header>
 
       {/* Main Configuration Section */}
-      <main className="max-w-6xl mx-auto py-10 px-4">
+      <main className="max-w-6xl mx-auto py-8 md:py-12 px-6 md:px-10">
         {/* Step 1: Upload Design */}
         <div className="mb-10">
           <h2 className="text-xl font-semibold mb-4 text-center">Step 1</h2>
@@ -82,10 +82,30 @@ const CustomiseJersey = () => {
           <p className="text-center mb-6">Choose your Material</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { id: 1, name: "Polyster", image: "https://images.pexels.com/photos/701771/pexels-photo-701771.jpeg?auto=compress&cs=tinysrgb&w=600" },
-              { id: 2, name: "Rayon", image: "https://images.pexels.com/photos/3586020/pexels-photo-3586020.jpeg?auto=compress&cs=tinysrgb&w=600" },
-              { id: 3, name: "Synthetic", image: "https://images.pexels.com/photos/18596239/pexels-photo-18596239/free-photo-of-a-woman-in-a-t-shirt-with-the-words-push-it-on-it.jpeg?auto=compress&cs=tinysrgb&w=600" },
-              { id: 4, name: "Cotton", image: "https://images.pexels.com/photos/7029344/pexels-photo-7029344.jpeg?auto=compress&cs=tinysrgb&w=600" },
+              {
+                id: 1,
+                name: "Polyster",
+                image:
+                  "https://images.pexels.com/photos/701771/pexels-photo-701771.jpeg?auto=compress&cs=tinysrgb&w=600",
+              },
+              {
+                id: 2,
+                name: "Rayon",
+                image:
+                  "https://images.pexels.com/photos/3586020/pexels-photo-3586020.jpeg?auto=compress&cs=tinysrgb&w=600",
+              },
+              {
+                id: 3,
+                name: "Synthetic",
+                image:
+                  "https://images.pexels.com/photos/18596239/pexels-photo-18596239/free-photo-of-a-woman-in-a-t-shirt-with-the-words-push-it-on-it.jpeg?auto=compress&cs=tinysrgb&w=600",
+              },
+              {
+                id: 4,
+                name: "Cotton",
+                image:
+                  "https://images.pexels.com/photos/7029344/pexels-photo-7029344.jpeg?auto=compress&cs=tinysrgb&w=600",
+              },
             ].map((material) => (
               <div
                 key={material.id}
@@ -134,7 +154,7 @@ const CustomiseJersey = () => {
 
       {/* Footer */}
       <footer className="bg-gray-100 py-10">
-        <div className="max-w-6xl mx-auto px-4 text-gray-600">
+        <div className="max-w-6xl mx-auto px-6 text-gray-600">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
             <div>
               <h3 className="font-semibold mb-4">Information</h3>
@@ -146,7 +166,7 @@ const CustomiseJersey = () => {
             </div>
             <div>
               <a href="/Services">
-              <h3 className="font-semibold mb-4">Services</h3>
+                <h3 className="font-semibold mb-4">Services</h3>
               </a>
               <ul>
                 <li className="mb-2">Customization</li>

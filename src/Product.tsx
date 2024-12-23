@@ -1,12 +1,25 @@
 import React, { useState } from "react";
 
-const Product = () => {
-  const [activeTab, setActiveTab] = useState("Description");
-  const [cart, setCart] = useState([]); // Store products in the cart
-  const [showPopup, setShowPopup] = useState(false);
+// Define types for the product and cart item
+interface ProductType {
+  id: number;
+  name: string;
+  price: string;
+}
+
+interface CartItem {
+  id: number;
+  name: string;
+  price: string;
+}
+
+const Product: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<string>("Description");
+  const [cart, setCart] = useState<CartItem[]>([]); // Store products in the cart
+  const [showPopup, setShowPopup] = useState<boolean>(false);
 
   // Sample product to add to cart
-  const product = {
+  const product: ProductType = {
     id: 1,
     name: "Sports Shoes",
     price: "$40.00",
@@ -25,9 +38,20 @@ const Product = () => {
   const renderTabContent = () => {
     switch (activeTab) {
       case "Description":
-        return <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula sapien vitae velit posuere, id sodales justo ornare. Suspendisse potenti.</p>;
+        return (
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+            vehicula sapien vitae velit posuere, id sodales justo ornare.
+            Suspendisse potenti.
+          </p>
+        );
       case "Additional Information":
-        return <p>Here you will find more details about the product, including dimensions, materials, and other specifications.</p>;
+        return (
+          <p>
+            Here you will find more details about the product, including
+            dimensions, materials, and other specifications.
+          </p>
+        );
       case "Reviews (0)":
         return <p>No reviews yet. Be the first to review this product!</p>;
       case "More Products":
@@ -69,8 +93,12 @@ const Product = () => {
             <div className="space-y-4">
               {/* Title & Price */}
               <div>
-                <h1 className="text-2xl font-bold">Pullover Hoodie Sweatshirt</h1>
-                <p className="text-gray-500 text-sm mt-2">SKU: N/A | Category: Hoodie</p>
+                <h1 className="text-2xl font-bold">
+                  Pullover Hoodie Sweatshirt
+                </h1>
+                <p className="text-gray-500 text-sm mt-2">
+                  SKU: N/A | Category: Hoodie
+                </p>
               </div>
               <div className="flex items-center space-x-2">
                 <p className="text-xl font-semibold text-green-600">$27.00</p>
@@ -79,7 +107,9 @@ const Product = () => {
 
               {/* Product Options */}
               <div>
-                <h3 className="font-semibold text-gray-800 mb-2">Product Options</h3>
+                <h3 className="font-semibold text-gray-800 mb-2">
+                  Product Options
+                </h3>
                 <div className="flex space-x-4 items-center">
                   {["White", "Black", "Yellow"].map((color, index) => (
                     <button
@@ -178,19 +208,24 @@ const Product = () => {
         {/* Tabs Section */}
         <div className="mt-10 bg-white shadow-md rounded-lg">
           <div className="flex border-b">
-            {["Description", "Additional Information", "Reviews (0)", "More Products"].map(
-              (tab) => (
-                <button
-                  key={tab}
-                  className={`flex-1 py-3 text-center font-medium hover:bg-gray-50 ${
-                    activeTab === tab ? "border-b-2 border-green-600 text-green-600" : ""
-                  }`}
-                  onClick={() => setActiveTab(tab)}
-                >
-                  {tab}
-                </button>
-              )
-            )}
+            {[
+              "Description",
+              "Additional Information",
+              "Reviews (0)",
+              "More Products",
+            ].map((tab) => (
+              <button
+                key={tab}
+                className={`flex-1 py-3 text-center font-medium hover:bg-gray-50 ${
+                  activeTab === tab
+                    ? "border-b-2 border-green-600 text-green-600"
+                    : ""
+                }`}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab}
+              </button>
+            ))}
           </div>
           <div className="p-6 text-gray-600">{renderTabContent()}</div>
         </div>
