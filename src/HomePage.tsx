@@ -31,20 +31,7 @@ const HomePage: React.FC = () => {
         {/* Logo Section */}
         <h1 className="text-xl lg:text-2xl font-bold">Aggarwal Sports</h1>
 
-        {/* Center Links */}
-        <nav className="flex-1 hidden md:flex justify-center space-x-4 lg:space-x-8">
-          <Link to="/shop" className="text-gray-600 hover:text-gray-800">
-            Shop
-          </Link>
-          <Link to="/page" className="text-gray-600 hover:text-gray-800">
-            Pages
-          </Link>
-          <Link to="/contact" className="text-gray-600 hover:text-gray-800">
-            Contact
-          </Link>
-        </nav>
-
-        {/* Hamburger Icon for Small Screens */}
+        {/* Mobile Menu Button */}
         <button
           className="text-gray-600 hover:text-gray-800 md:hidden"
           onClick={toggleMenu}
@@ -52,14 +39,14 @@ const HomePage: React.FC = () => {
           {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
 
-        {/* Mobile Menu (Only visible when menuOpen is true) */}
+        {/* Mobile Menu */}
         {menuOpen && (
           <nav className="absolute top-16 left-0 w-full bg-gray-50 shadow-md md:hidden">
-            <ul className="flex flex-col items-center space-y-4 py-4">
+            <ul className="flex flex-col items-center space-y-6 py-6">
               <li>
                 <Link
                   to="/shop"
-                  className="text-gray-600 hover:text-gray-800"
+                  className="text-gray-600 hover:text-gray-800 text-center w-full px-4"
                   onClick={toggleMenu}
                 >
                   Shop
@@ -68,25 +55,177 @@ const HomePage: React.FC = () => {
               <li>
                 <Link
                   to="/page"
-                  className="text-gray-600 hover:text-gray-800"
+                  className="text-gray-600 hover:text-gray-800 text-center w-full px-4"
                   onClick={toggleMenu}
                 >
                   Pages
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/contact"
-                  className="text-gray-600 hover:text-gray-800"
-                  onClick={toggleMenu}
-                >
-                  Contact
-                </Link>
-              </li>
+              <div className="flex-none">
+                <ul className="menu px-1">
+                  <li>
+                    <details>
+                      <summary className="text-gray-600 hover:text-gray-800 text-center">
+                        FITNESS EQUIPMENT
+                      </summary>
+                      <ul className="bg-base-100 rounded-t-none p-2">
+                        <li>
+                          <ul className="p-2 ml-4">
+                            <li>
+                              <a className="text-gray-600 hover:text-gray-800">
+                                INDOOR FITNESS
+                              </a>
+                              <ul className="p-2 ml-4">
+                                <li>
+                                  <Link
+                                    to="/cardio"
+                                    className="text-gray-600 hover:text-gray-800"
+                                  >
+                                    CARDIO EQUIPMENTS
+                                  </Link>
+                                  <Link
+                                    to="/strength"
+                                    className="text-gray-600 hover:text-gray-800"
+                                  >
+                                    STRENGTH EQUIPMENTS
+                                  </Link>
+                                  <Link
+                                    to="/weight"
+                                    className="text-gray-600 hover:text-gray-800"
+                                  >
+                                    WEIGHTS & BARBELLS
+                                  </Link>
+                                  <Link
+                                    to="/accessories"
+                                    className="text-gray-600 hover:text-gray-800"
+                                  >
+                                    ACCESSORIES
+                                  </Link>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a className="text-gray-600 hover:text-gray-800">
+                                OUTDOOR FITNESS
+                              </a>
+                              <ul className="p-2 ml-4">
+                                <li>
+                                  <a
+                                    href="/executive-series"
+                                    className="text-gray-600 hover:text-gray-800"
+                                  >
+                                    EXECUTIVE SERIES
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    href="/premium-series"
+                                    className="text-gray-600 hover:text-gray-800"
+                                  >
+                                    PREMIUM SERIES
+                                  </a>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </details>
+                  </li>
+                </ul>
+              </div>
             </ul>
           </nav>
         )}
-        {/* Search, Cart, and Sign-Up */}
+
+        {/* Desktop Menu */}
+        <nav className="flex-1 hidden md:flex justify-center space-x-6 lg:space-x-10">
+          <Link
+            to="/shop"
+            className="text-gray-600 hover:text-gray-800 text-center px-2"
+          >
+            Shop
+          </Link>
+          <Link
+            to="/page"
+            className="text-gray-600 hover:text-gray-800 text-center px-2"
+          >
+            Pages
+          </Link>
+          <div className="flex-none">
+            <ul className="menu menu-horizontal space-x-6 lg:space-x-10">
+              <li>
+                <details>
+                  <summary className="text-gray-600 hover:text-gray-800 text-center">
+                    FITNESS EQUIPMENT
+                  </summary>
+                  <ul className="bg-base-100 rounded-t-none p-2">
+                    <li>
+                      <ul className="p-2 ml-4">
+                        <li>
+                          <a className="text-gray-600 hover:text-gray-800">
+                            INDOOR FITNESS
+                          </a>
+                          <ul className="p-2 ml-4">
+                            <li>
+                              <Link
+                                to="/cardio"
+                                className="text-gray-600 hover:text-gray-800"
+                              >
+                                CARDIO EQUIPMENTS
+                              </Link>
+                              <Link
+                                to="/strength"
+                                className="text-gray-600 hover:text-gray-800"
+                              >
+                                STRENGTH EQUIPMENTS
+                              </Link>
+                              <Link
+                                to="/weight"
+                                className="text-gray-600 hover:text-gray-800"
+                              >
+                                WEIGHTS & BARBELLS
+                              </Link>
+                              <Link
+                                to="/accessories"
+                                className="text-gray-600 hover:text-gray-800"
+                              >
+                                ACCESSORIES
+                              </Link>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a className="text-gray-600 hover:text-gray-800">
+                            OUTDOOR FITNESS
+                          </a>
+                          <ul className="p-2 ml-4">
+                            <li>
+                              <a
+                                href="/executive-series"
+                                className="text-gray-600 hover:text-gray-800"
+                              >
+                                EXECUTIVE SERIES
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="/premium-series"
+                                className="text-gray-600 hover:text-gray-800"
+                              >
+                                PREMIUM SERIES
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </details>
+              </li>
+            </ul>
+          </div>
+        </nav>
         <div className="flex items-center space-x-4">
           {/* Search Icon and Input */}
           <div className="relative">
@@ -244,5 +383,4 @@ const HomePage: React.FC = () => {
     </>
   );
 };
-
 export default HomePage;

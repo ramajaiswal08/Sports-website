@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 interface Product {
@@ -216,7 +216,6 @@ const Shop: React.FC = () => {
               ))}
             </div>
 
-            {/* Pagination */}
             <div className="mt-8 flex justify-center items-center space-x-2">
               <button className="px-4 py-2 bg-gray-200 rounded-lg text-gray-600">
                 1
