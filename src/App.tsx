@@ -14,9 +14,9 @@ import Executive from "./Executive";
 import Premium from "./Premium";
 
 // Add type annotations for the route parameters
-interface ProductParams {
-  id: string;
-}
+// interface ProductParams {
+//   id: string;
+// }
 
 const App: React.FC = () => {
   return (

@@ -72,9 +72,12 @@ const HomePage: React.FC = () => {
                         <li>
                           <ul className="p-2 ml-4">
                             <li>
-                              <a className="text-gray-600 hover:text-gray-800">
+                              <Link
+                                to="#"
+                                className="text-gray-600 hover:text-gray-800"
+                              >
                                 INDOOR FITNESS
-                              </a>
+                              </Link>
                               <ul className="p-2 ml-4">
                                 <li>
                                   <Link
@@ -105,9 +108,9 @@ const HomePage: React.FC = () => {
                               </ul>
                             </li>
                             <li>
-                              <a className="text-gray-600 hover:text-gray-800">
+                              <p className="text-gray-600 hover:text-gray-800">
                                 OUTDOOR FITNESS
-                              </a>
+                              </p>
                               <ul className="p-2 ml-4">
                                 <li>
                                   <a
@@ -163,9 +166,9 @@ const HomePage: React.FC = () => {
                     <li>
                       <ul className="p-2 ml-4">
                         <li>
-                          <a className="text-gray-600 hover:text-gray-800">
+                          <p className="text-gray-600 hover:text-gray-800">
                             INDOOR FITNESS
-                          </a>
+                          </p>
                           <ul className="p-2 ml-4">
                             <li>
                               <Link
@@ -196,9 +199,9 @@ const HomePage: React.FC = () => {
                           </ul>
                         </li>
                         <li>
-                          <a className="text-gray-600 hover:text-gray-800">
+                          <p className="text-gray-600 hover:text-gray-800">
                             OUTDOOR FITNESS
-                          </a>
+                          </p>
                           <ul className="p-2 ml-4">
                             <li>
                               <a
